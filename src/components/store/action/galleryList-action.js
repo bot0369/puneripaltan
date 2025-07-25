@@ -6,16 +6,14 @@ export const getGalleryList = createAsyncThunk("get-galleryList", async () => {
 
   let data = res.data;
 
-  // If it's a string, parse it; otherwise, use as-is
   if (typeof data === "string") {
-    // Remove trailing <script> if present
     const scriptIndex = data.indexOf('<script');
     if (scriptIndex !== -1) {
       data = data.substring(0, scriptIndex);
     }
 
-    data = JSON.parse(data); // safely parse the cleaned string
+    data = JSON.parse(data);
   }
 
-  return data.reverse(); // reverse the array (if it's an array)
+  return data.reverse();
 });

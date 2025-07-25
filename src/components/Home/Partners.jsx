@@ -2,18 +2,18 @@ import React from "react";
 import principalPartner from "../../assets/images/logos/force_motors.png";
 import poweredBy from "../../assets/images/logos/Batery-Ai_logo.png";
 import assoPartner from "../../assets/images/logos/korloskar-brother-logo.png";
-import stihl from "../../assets/images/logos/stihl-logo.png"
-import hint from "../../assets/images/logos/hint_logo.png"
-import vikram from "../../assets/images/logos/vikram-tea.png"
-import radio from "../../assets/images/logos/radio.png"
-import icon from "../../assets/images/logos/icon-logo.png"
-import shiv from "../../assets/images/logos/shiv-naresh-logo.png"
+import stihl from "../../assets/images/logos/stihl-logo.png";
+import hint from "../../assets/images/logos/hint_logo.png";
+import vikram from "../../assets/images/logos/vikram-tea.png";
+import radio from "../../assets/images/logos/radio.png";
+import icon from "../../assets/images/logos/icon-logo.png";
+import shiv from "../../assets/images/logos/shiv-naresh-logo.png";
 
 const Partners = () => {
   return (
     <div className="relative">
       <div
-        className="absolute -top-37 flex flex-column m-20 bg-orange-500 p-10 gap-10 px-30 absolute -top-0"
+        className="absolute -top-37 flex flex-column m-20 bg-orange-500 p-10 gap-10 px-30 "
         style={{ clipPath: "polygon( 2% 0, 100% 0, 98% 100%, 0% 100%)" }}
       >
         <h2 className="text-2xl py-2 text-white font-bold">
@@ -43,7 +43,7 @@ const Partners = () => {
           <div>
             <div>
               <img src={principalPartner} alt="" />
-              <p >Principal Partner</p>
+              <p>Principal Partner</p>
             </div>
           </div>
           <div className="flex flex-row gap-10">
