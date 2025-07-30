@@ -7,11 +7,8 @@ import { Link, NavLink } from "react-router-dom";
 
 const navigation = [
   { name: "Players", href: "/players" },
-  { name: "Standings", href: "/standings" },
-  { name: "Fixtures", href: "/fixtures" },
   { name: "Paltan World", href: "/paltanworld" },
   { name: "Tickets", href: "/tickets" },
-  { name: "Yuva Paltan", href: "/yuvapaltan" },
 ];
 
 export default function Header() {
@@ -40,7 +37,7 @@ export default function Header() {
             <Bars3Icon aria-hidden="true" className="size-6" />
           </button>
         </div>
-        <div className="hidden lg:flex lg:gap-x-6 pr-100 tracking-wider">
+        <div className="hidden lg:flex lg:gap-x-6 2xl:gap-x-15 pr-100 tracking-wider">
           {navigation.map((item) => (
             <NavLink
               key={item.name}

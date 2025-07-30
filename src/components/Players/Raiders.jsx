@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getPlayers } from "../store/action/player-action";
 import { Link } from "react-router-dom";
+import Tilt from "react-parallax-tilt";
 
 const Raiders = () => {
   const dispatch = useDispatch();
@@ -23,15 +24,25 @@ const Raiders = () => {
   const renderPlayers = (list) =>
     list.map((player) => (
       <Link to={`/getPlayerDetails/${player.id}`} key={player.id}>
-        <div className="">
-          <img
-            src={player.profile_image}
-            alt={player.name}
-            className="w-90 h-90 mx-auto"
-          />
-          <h2 className="mt-2 text-lg font-bold text-center">{player.name}</h2>
-          <p className="mt-2 text-md  text-center">{player.position}</p>
-        </div>
+        <Tilt
+          key={player.id}
+          perspective={300}
+          glareEnable= {false}
+          scale={1.04}
+          transitionSpeed={250}
+        >
+          <div className="mb-10">
+            <img
+              src={player.profile_image}
+              alt={player.name}
+              className="w-72 h-75 mx-auto"
+            />
+            <h2 className="mx-auto text-4xl font-bold text-center">
+              {player.name}
+            </h2>
+            <p className="mt-1 text-xl text-orange-500 text-center">{player.position}</p>
+          </div>
+        </Tilt>
       </Link>
     ));
 
@@ -53,7 +64,7 @@ const Raiders = () => {
             RAIDERS
           </h1>
         </div>
-        <div className="grid grid-cols-3 ">{renderPlayers(raiders)}</div>
+        <div className="grid grid-cols-3 px-40">{renderPlayers(raiders)}</div>
       </section>
 
       <section className="mb-10">
@@ -66,7 +77,7 @@ const Raiders = () => {
           </h1>
         </div>
         <Link>
-          <div className="grid grid-cols-3">{renderPlayers(defenders)}</div>
+          <div className="grid grid-cols-3 px-40 ">{renderPlayers(defenders)}</div>
         </Link>
       </section>
 
@@ -79,7 +90,7 @@ const Raiders = () => {
             ALL ROUNDERS
           </h1>
         </div>
-        <div className="grid grid-cols-3">{renderPlayers(allRounders)}</div>
+        <div className="grid grid-cols-3 px-40">{renderPlayers(allRounders)}</div>
       </section>
     </div>
   );

@@ -8,7 +8,7 @@ import { MdArrowLeft } from "react-icons/md";
 import { MdArrowRight } from "react-icons/md";
 import { Link } from "react-router-dom";
 
-const Scrollbar = () => {
+const ScrollBar2 = () => {
   const dispatch = useDispatch();
 
   const { players, status, error } = useSelector((state) => state.player || {});
@@ -21,25 +21,25 @@ const Scrollbar = () => {
     const { className, style, onClick } = props;
     return (
       <div
-        className={`${className} custom-arrow next-arrow text-black`}
+        className={`${className} custom-arrow next-arrow`}
         style={{
           ...style,
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "white",
-          width: "60px",
-          height: "40px",
+          background: "orange",
+          width: "70px",
+          height: "50px",
           position: "absolute",
-          right: "-30px",
-          top: "400px",
+          right: "-35px",
+          top: "50%",
           zIndex: 2,
           borderRadius: "40px",
           cursor: "pointer",
         }}
         onClick={onClick}
       >
-        <MdArrowRight size={30} color="black" />
+        <MdArrowRight size={40} color="white" />
       </div>
     );
   };
@@ -54,32 +54,30 @@ const Scrollbar = () => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "white",
-          width: "60px",
-          height: "40px",
+          background: "orange",
+          width: "70px",
+          height: "50px",
           position: "absolute",
-          left: "800px",
-          top: "400px",
+          left: "-35px",
+          top: "50%",
           zIndex: 2,
           borderRadius: "50px",
           cursor: "pointer",
-
         }}
         onClick={onClick}
       >
-        <MdArrowLeft size={30} color="black" />
+        <MdArrowLeft size={40} color="white" />
       </div>
     );
   };
 
 
   const settings = {
-    dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
+    slidesToShow: 2,
     autoplay: true,
+    slidesToScroll: 1,
     autoplaySpeed: 3000,
     pauseOnHover: true,
     nextArrow: <NextArrow />,
@@ -101,7 +99,9 @@ const Scrollbar = () => {
   };
 
   return (
-    <div className="sm:w-220 md:w-100 lg:w-240 2xl:w-350 px-4 pt-30 pb-30">
+    <div className="w-300 my-20 mx-auto bg-black"
+
+    >
       {status === "loading" && (
         <p className="text-center text-gray-700">Loading gallery...</p>
       )}
@@ -115,19 +115,33 @@ const Scrollbar = () => {
           {players.map((player) => (
             <div key={player.id} className="">
               <Link to={`/getPlayerDetails/${player.id}`}>
-              <div className="p-1 text-center">
-                <img
-                  src={player.profile_image}
-                  alt={player.name}
-                  className="w-60 h-60 object-cover rounded-full mx-auto 2xl:h-80 2xl:w-80"
-                />
-                <h2 className="mt-2 text-lg text-white font-semibold">
-                  {player.name}
-                </h2>
-                <p className="text-sm text-orange-600">{player.cat_name}</p>
-              </div>
+                <div className=" relative p-1 text-center flex flex-cols gap-10 ">
+                  <div className="my-auto pl-20 py-35">
+                    <h2 className="mt-2 text-3xl text-white font-semibold">
+                      {player.name}
+                    </h2>
+                    <p className="text-md text-orange-600">{player.cat_name}</p>
+                  </div>
+
+                  <div className="w-70 h-70 mt-25 overflow-hidden">
+                    <img
+                      src={player.full_image}
+                      alt={player.name}
+                      className="w-full 2xl:h-80 2xl:w-80"
+                    />
+                  </div>
+
+                  {player.jersey_no !== "0" && (
+                    <div className="text-white text-5xl italic px-5 py-3 absolute top-0 left-0 bg-orange-500"
+                      style={{
+                        clipPath: "polygon(10% 0, 100% 0, 90% 100%, 0% 100%)",
+                      }}
+                    >
+                      {player.jersey_no}
+                    </div>
+                  )}
+                </div>
               </Link>
-              
             </div>
           ))}
         </Slider>
@@ -136,4 +150,4 @@ const Scrollbar = () => {
   );
 };
 
-export default Scrollbar;
+export default ScrollBar2;

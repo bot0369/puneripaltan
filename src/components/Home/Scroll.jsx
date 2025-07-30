@@ -1,5 +1,6 @@
 import React from "react";
 import Scrollbar from "./Scrollbar";
+import { Link } from "react-router-dom";
 
 const Scroll = () => {
   return (
@@ -25,7 +26,16 @@ const Scroll = () => {
         <div>
           <Scrollbar />
         </div>
+
       </div>
+      <Link to="/players">
+        <div className="mb-50 text-center w-70 py-2 font-medium italic text-2xl mx-auto bg-orange-500"
+        style={{ clipPath: "polygon( 3% 0, 100% 0, 97% 100%, 0% 100%)" }}
+        >
+          <h1>Enter</h1>
+        </div>
+      </Link>
+
     </div>
   );
 };

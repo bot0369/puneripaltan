@@ -4,8 +4,14 @@ import bgimage2 from "../../assets/images/banner-title.png";
 import bgimage3 from "../../assets/images/players_page_banner_desktop_S11.png";
 import Footer from "../../global/Footer";
 import Raiders from "./Raiders";
+import { useEffect } from "react";
 
 const Players = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div>
       <div

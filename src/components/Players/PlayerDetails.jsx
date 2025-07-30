@@ -4,6 +4,7 @@ import { getPlayerDetails } from "../store/action/playerDetails";
 import { useParams } from "react-router-dom";
 import bgimg from "../../assets/images/players/fixtures-bg.jpeg";
 import Footer from "../../global/Footer";
+import ScrollBar2 from "./ScrollBar2";
 
 const PlayerDetails = () => {
   const dispatch = useDispatch();
@@ -252,6 +253,14 @@ const PlayerDetails = () => {
               </div>
             </div>
           </div>
+
+          <div>
+            <div className="text-8xl font-bold text-orange-500 text-center"><h1>OTHER PLAYERS</h1></div>      
+            <div >
+              <ScrollBar2 currentPlayerId = {parseInt(id)}/>    
+              </div>      
+          </div>        
+
           <div>
             <Footer />
           </div>
