@@ -21,20 +21,21 @@ const Scroll = () => {
         better, challenge its opponents and make a difference.
       </p>
 
-      {/* <div className="flex flex-column">
-        <div className="py-50 px-7 text-[90px] text-orange-400 ">PLAYERS</div>
+      <div className="block md:flex md:flex-column">
+        <div className="py-10 md:py-50 px-7 text-5xl md:text-[90px] text-orange-400 ">PLAYERS</div>
         <div>
           <Scrollbar />
         </div>
 
       </div>
+      
       <Link to="/players">
-        <div className="mb-50 text-center w-70 py-2 font-medium italic text-2xl mx-auto bg-orange-500"
+        <div className="mt-20 md:mb-50 text-center w-70 py-2 font-medium italic text-2xl mx-auto bg-orange-500"
         style={{ clipPath: "polygon( 3% 0, 100% 0, 97% 100%, 0% 100%)" }}
         >
           <h1>Enter</h1>
         </div>
-      </Link> */}
+      </Link>
 
     </div>
   );

@@ -11,9 +11,9 @@ const Home = () => {
     <>
       <div>
         <LogoImage />
-        <Scroll />
-        {/* 
+        <Scroll />  
         <Tickets />
+        {/*
         <PaltanWorld/>
         <News/>
         <Partners/>

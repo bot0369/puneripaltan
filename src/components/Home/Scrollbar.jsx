@@ -48,7 +48,7 @@ const Scrollbar = () => {
     const { className, style, onClick } = props;
     return (
       <div
-        className={`${className} custom-arrow prev-arrow`}
+        className={`${className} custom-arrow prev-arrow md:`}
         style={{
           ...style,
           display: "flex",
@@ -58,7 +58,7 @@ const Scrollbar = () => {
           width: "60px",
           height: "40px",
           position: "absolute",
-          left: "82%",
+          left: "50%",
           top: "400px",
           zIndex: 2,
           borderRadius: "50px",
