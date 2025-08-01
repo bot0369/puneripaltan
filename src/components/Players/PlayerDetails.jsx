@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import bgimg from "../../assets/images/players/fixtures-bg.jpeg";
 import Footer from "../../global/Footer";
 import ScrollBar2 from "./ScrollBar2";
+import playerImages from "./playerImages";
 
 const PlayerDetails = () => {
   const dispatch = useDispatch();
@@ -20,19 +21,24 @@ const PlayerDetails = () => {
     }
   }, [dispatch, id]);
 
+  const localImageObj = playerImages.find((img) => img.id === parseInt(id));
+  const localImage = localImageObj ? localImageObj.image : null;
+
   return (
     <div>
       {status === "loading" && <p>Loading...</p>}
       {status === "failed" && <p className="text-red-600">{error}</p>}
       {status === "succeeded" && playerDetails && (
         <div>
-          <div className="flex justify-center items-center py-30">
-            <h1 className="text-2xl font-bold">{playerDetails.name}</h1>
-            <img
-              src={playerDetails.profile_image}
-              alt={playerDetails.name}
-              className="w-64 h-64"
-            />
+          
+          <div className="">
+            {localImage && (
+              <img
+                src={localImage}
+                alt={playerDetails.name}
+                className=""
+              />
+            )}
           </div>
 
           <div
@@ -44,10 +50,10 @@ const PlayerDetails = () => {
               backgroundRepeat: "no-repeat",
             }}
           >
-            <div>
-              <img src={playerDetails.full_image} alt="" className="w-100" />
-            </div>
-            <div className="px-30">
+            
+              <img src={playerDetails.full_image} alt="" className="w-60"/>
+            
+            <div className="px-10">
               <div className="flex flex-cols gap-30 ml-8">
                 <div>
                   <h1
@@ -255,11 +261,13 @@ const PlayerDetails = () => {
           </div>
 
           <div>
-            <div className="text-8xl font-bold text-orange-500 text-center"><h1>OTHER PLAYERS</h1></div>      
-            <div >
-              <ScrollBar2 currentPlayerId = {parseInt(id)}/>    
-              </div>      
-          </div>        
+            <div className="text-8xl font-bold text-orange-500 text-center">
+              <h1>OTHER PLAYERS</h1>
+            </div>
+            <div>
+              <ScrollBar2 currentPlayerId={parseInt(id)} />
+            </div>
+          </div>
 
           <div>
             <Footer />
