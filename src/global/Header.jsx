@@ -15,23 +15,23 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="fixed inset-x-0 top-0 h-10 z-50 p-6 ">
+    <header className="fixed inset-x-0 top-0 h-10 z-50 py-5 px-2 md:p-6 ">
       <nav
         aria-label="Global"
-        className="flex items-center justify-between text-sm italic h-28 p-6 lg:px-8 bg-black/40"
+        className="w-full flex items-center justify-between text-sm italic h-28 p-6 lg:px-8 bg-black/40"
         // style={{ clipPath: "polygon( 2% 0, 100% 0, 98% 100%, 0% 100%)" }}
       >
         <div className="flex lg:flex-1">
-          <Link to="/" className="-m-1.5 p-1.5">
+          <Link to="/" className="-m-6.5 p-1.5 md:m-10">
             <span className="sr-only">Your Company</span>
-            <img alt="" src="src/assets/logo.gif" className="w-35 h-40 m-20" />
+            <img alt="" src="src/assets/logo.gif" className="w-10 h-25 w-20 md:h-[150px] md:w-[120px]" />
           </Link>
         </div>
         <div className="flex lg:hidden">
           <button
             type="button"
             onClick={() => setMobileMenuOpen(true)}
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white"
           >
             <span className="sr-only">Open main menu</span>
             <Bars3Icon aria-hidden="true" className="size-6" />

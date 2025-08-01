@@ -12,11 +12,12 @@ const Home = () => {
       <div>
         <LogoImage />
         <Scroll />
+        {/* 
         <Tickets />
         <PaltanWorld/>
         <News/>
         <Partners/>
-        <Footer />
+        <Footer /> */}
       </div>
     </>
   );

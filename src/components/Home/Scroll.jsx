@@ -6,13 +6,13 @@ const Scroll = () => {
   return (
     <div className="bg-black text-white py-20">
       <div
-        className="mx-auto w-fit text-2xl tracking-[60px]"
+        className="mx-auto w-fit text-2xl tracking-[30px] md:tracking-[60px] pl-6 md:pl-0"
         style={{ fontFamily: "Exo-Light" }}
       >
         SCROLL
       </div>
       <p
-        className="m-20 px-20 text-4xl justify"
+        className="m-10 md:m-20 md:px-20 text-3xl md:text-4xl text-center md:text-justify"
         style={{ color: "#ff7500", fontFamily: "Exo-Bold" }}
       >
         Puneri Paltan is currently one of the top performing teams in the Pro
@@ -21,7 +21,7 @@ const Scroll = () => {
         better, challenge its opponents and make a difference.
       </p>
 
-      <div className="flex flex-column">
+      {/* <div className="flex flex-column">
         <div className="py-50 px-7 text-[90px] text-orange-400 ">PLAYERS</div>
         <div>
           <Scrollbar />
@@ -34,7 +34,7 @@ const Scroll = () => {
         >
           <h1>Enter</h1>
         </div>
-      </Link>
+      </Link> */}
 
     </div>
   );
