@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+.slick-prev::before,
+.slick-next::before {
+  display: none !important;
+  content: none !important;
+} 
+
+*{
+  box-sizing: border-box;
+}
+
+
+/* styles.css or tailwind.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .clip-mobile {
+    clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+  }
+
+  .md\:clip-normal {
+    clip-path: polygon(0% 0, 100% 0, 100% 100%, 0% 100%);
+  }
+
+  .md\:clip-go-desktop {
+    clip-path: polygon( 25% 0, 100% 0, 75% 100%, 0% 100%);
+  }
+
+  .clip-go-mobile {
+    clip-path: polygon( 20% 0, 100% 0, 80% 100%, 0% 100%);
+  }
+
+  .clip-email-mobile {
+    clip-path: polygon( 6% 0, 100% 0, 94% 100%, 0% 100%);
+  }
+
+  @media (min-width: 768px) {
+    .md\:clip-desktop {
+      clip-path: polygon(5% 0, 100% 0, 95% 100%, 0% 100%);
+    }
+  }
+}
