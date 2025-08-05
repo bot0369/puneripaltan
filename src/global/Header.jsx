@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Link, NavLink } from "react-router-dom";
@@ -13,6 +13,11 @@ const navigation = [
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [showNavbar, setShowNavbar] = useState(true);
+  const handleMenuClick = () => {
+    setMobileMenuOpen(false);
+  }
 
   return (
     <header className="fixed inset-x-0 top-0 h-10 z-50 py-5 px-2 md:p-6 ">
@@ -24,7 +29,7 @@ export default function Header() {
         <div className="flex lg:flex-1">
           <Link to="/" className="-m-6.5 p-1.5 md:m-10">
             <span className="sr-only">Your Company</span>
-            <img alt="" src="src/assets/logo.gif" className="w-10 h-25 w-20 md:h-[150px] md:w-[120px]" />
+            <img alt="" src="src/assets/images/logos/logo.gif" className="w-10 h-25 w-20 md:h-[150px] md:w-[120px]" />
           </Link>
         </div>
         <div className="flex lg:hidden">
@@ -80,7 +85,8 @@ export default function Header() {
                 {navigation.map((item) => (
                   <NavLink
                     key={item.name}
-                    href={item.href}
+                    to={item.href}
+                    onClick={handleMenuClick}
                     className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                   >
                     {item.name}

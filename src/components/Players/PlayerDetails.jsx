@@ -42,7 +42,7 @@ const PlayerDetails = () => {
           </div>
 
           <div
-            className="px-56 py-20 flex flex-cols"
+            className="py-10 md:px-56 md:py-20 md:flex md:flex-cols"
             style={{
               backgroundImage: `url(${bgimg})`,
               backgroundSize: "cover",
@@ -51,13 +51,13 @@ const PlayerDetails = () => {
             }}
           >
             
-              <img src={playerDetails.full_image} alt="" className="w-60"/>
+              <img src={playerDetails.full_image} alt="" className="mx-auto pt-10 md:pt-0 w-60"/>
             
-            <div className="px-10">
-              <div className="flex flex-cols gap-30 ml-8">
+            <div className="">
+              <div className="md:flex md:flex-cols gap-30 md:ml-8 px-15 md:px-0">
                 <div>
                   <h1
-                    className="bg-[#fa4300] text-2xl font-bold text-white mb-5 px-10 py-2"
+                    className="bg-[#fa4300] text-center text-2xl font-bold text-white mb-5 px-5 md:px-10 py-2"
                     style={{
                       clipPath: "polygon(6% 0, 100% 0, 94% 100%, 0% 100%)",
                     }}
@@ -70,7 +70,7 @@ const PlayerDetails = () => {
                 </div>
                 <div>
                   <h1
-                    className="bg-[#fa4300] text-2xl font-bold text-white mb-5 px-10 py-2"
+                    className="bg-[#fa4300] text-center text-2xl font-bold text-white mb-5 px-10 py-2"
                     style={{
                       clipPath: "polygon(6% 0, 100% 0, 94% 100%, 0% 100%)",
                     }}
@@ -83,10 +83,10 @@ const PlayerDetails = () => {
                 </div>
               </div>
 
-              <div className="mt-20">
-                <div className="w-160 h-0.5 bg-stone-300 mb-15 "></div>
+              <div className="mt-20 px-15 md:px-0">
+                <div className="w-full h-0.5 bg-stone-300 mb-15 "></div>
                 <h1
-                  className="bg-[#fa4300] text-2xl font-bold text-white mb-10 w-fit px-13 py-2"
+                  className="bg-[#fa4300] text-center text-2xl font-bold text-white mb-10 w-full md:w-fit px-13 py-2"
                   style={{
                     clipPath: "polygon(6% 0, 100% 0, 94% 100%, 0% 100%)",
                   }}
@@ -94,7 +94,7 @@ const PlayerDetails = () => {
                   VITALS
                 </h1>
               </div>
-              <div className="flex flex-cols gap-60">
+              <div className="flex flex-cols gap-10 md:gap-60 px-6">
                 <div>
                   <div className="flex flex-col text-stone-400 gap-5">
                     <h1>Name</h1>
@@ -114,14 +114,14 @@ const PlayerDetails = () => {
           </div>
 
           <div>
-            <h1 className="text-8xl text-center py-5 text-[#fa4300] font-bold">
+            <h1 className="text-5xl md:text-8xl text-center py-1 md:py-5 text-[#fa4300] font-bold">
               STATISTICS
             </h1>
           </div>
 
-          <div className="flex flex-cols gap-22 py-10 bg-stone-100">
+          <div className="md:flex md:flex-cols gap-22 py-10 bg-stone-100 text-center">
             <div
-              className="w-1/3 bg-[#fa4300] text-white text-3xl italic font-bold my-auto py-5 pr-10 flex justify-end"
+              className="md:w-1/3 bg-[#fa4300] text-white text-3xl italic font-bold my-auto py-5 pr-10 flex justify-center md:justify-end"
               style={{
                 clipPath: "polygon(0 0, 100% 0, 97% 100%, 0% 100%)",
               }}
@@ -162,17 +162,17 @@ const PlayerDetails = () => {
             </div>
           </div>
 
-          <div className="flex flex-cols gap-20 my-20 ">
+          <div className="md:flex md:flex-cols gap-20 my-20">
             <div
-              className="w-1/3 bg-[#fa4300] h-full text-white text-3xl italic font-bold py-5 pr-10 flex justify-end"
+              className="md:w-1/3 bg-[#fa4300] h-full text-white text-3xl italic font-bold py-5 pr-10 flex justify-center md:justify-end"
               style={{
                 clipPath: "polygon(0 0, 100% 0, 97% 100%, 0% 100%)",
               }}
             >
               <h1>RAID</h1>
             </div>
-            <div className="grid grid-cols-2 gap-x-20 gap-y-10">
-              <div className="text-center">
+            <div className="md:grid md:grid-cols-2 gap-x-20 gap-y-10 ">
+              <div className="text-center m-10 md:m-0">
                 <div className="text-center py-3 w-35 mx-auto text-3xl mb-3 font-bold bg-stone-100">
                   {playerDetails.no_of_super_raids}
                 </div>
@@ -180,7 +180,7 @@ const PlayerDetails = () => {
                   <h1>NO OF SUPER RAIDS</h1>
                 </div>
               </div>
-              <div className="text-center">
+              <div className="text-center m-10 md:m-0">
                 <div className="text-center py-3 w-35 mx-auto text-3xl mb-3 font-bold bg-stone-100">
                   {playerDetails.super_10s}
                 </div>
@@ -188,7 +188,7 @@ const PlayerDetails = () => {
                   <h1>SUPER 10S</h1>
                 </div>
               </div>
-              <div className="text-center">
+              <div className="text-center m-10 md:m-0">
                 <div className="text-center py-3 w-35 mx-auto text-3xl mb-3 font-bold bg-stone-100">
                   {playerDetails.avg_raid_points}
                 </div>
@@ -197,13 +197,13 @@ const PlayerDetails = () => {
                 </div>
               </div>
             </div>
-            <div className="w-50 h-50 rounded-[50%] border-20 border-orange-500 text-center flex flex-col justify-center items-center">
+            <div className="mx-auto w-50 h-50 rounded-[50%] border-20 border-orange-500 text-center flex flex-col justify-center items-center">
               <h1>TOTAL RAID</h1>
               <p>0</p>
             </div>
-            <div>
+            <div className="text-center">
               <p
-                className="py-1 w-40 my-15 text-3xl text-center mb-3 font-bold bg-stone-100"
+                className="mx-auto py-1 w-40 my-15 text-3xl text-center mb-3 font-bold bg-stone-100"
                 style={{
                   clipPath: "polygon(6% 0, 100% 0, 94% 100%, 0% 100%)",
                 }}
@@ -214,17 +214,17 @@ const PlayerDetails = () => {
             </div>
           </div>
 
-          <div className="flex flex-cols gap-17 my-20 py-20 bg-stone-100">
+          <div className="md:flex md:flex-cols gap-17 my-20 py-20 bg-stone-100">
             <div
-              className="w-1/3 bg-[#fa4300] text-white text-3xl italic font-bold h-full py-5 pr-10 flex justify-end"
+              className="md:w-1/3 bg-[#fa4300] text-white text-3xl italic font-bold h-full py-5 pr-10 flex justify-center md:justify-end"
               style={{
                 clipPath: "polygon(0 0, 100% 0, 97% 100%, 0% 100%)",
               }}
             >
               <h1>TACKLES</h1>
             </div>
-            <div className="grid grid-cols-2 gap-15">
-              <div className="text-center">
+            <div className="md:grid md:grid-cols-2 gap-15">
+              <div className="text-center m-10 md:m-0">
                 <div className="py-3 w-35 mx-auto text-3xl  mb-3 font-bold bg-white">
                   {playerDetails.no_of_super_tackles}
                 </div>
@@ -232,7 +232,7 @@ const PlayerDetails = () => {
                   <h1>NO. OF SUPER TACKLES</h1>
                 </div>
               </div>
-              <div className="text-center">
+              <div className="text-center m-10 md:m-0">
                 <div className="py-3 w-35 mx-auto text-3xl  mb-3 font-bold bg-white">
                   {playerDetails.total_tacle_points}
                 </div>
@@ -241,14 +241,14 @@ const PlayerDetails = () => {
                 </div>
               </div>
             </div>
-            <div className="flex flex-cols gap-10">
-              <div className="w-50 h-50 rounded-[50%] border-20 text-center flex flex-col justify-center items-center">
+            <div className="md:flex md:flex-cols gap-10">
+              <div className="mx-auto w-50 h-50 rounded-[50%] border-20 text-center flex flex-col justify-center items-center">
                 <h1>TOTAL TACKLE</h1>
                 <p>0</p>
               </div>
-              <div>
+              <div className="text-center">
                 <p
-                  className="py-1 w-40 my-15 text-3xl text-center mb-3 font-bold bg-white"
+                  className="mx-auto py-1 w-40 my-15 text-3xl text-center mb-3 font-bold bg-white"
                   style={{
                     clipPath: "polygon(6% 0, 100% 0, 94% 100%, 0% 100%)",
                   }}
@@ -261,7 +261,7 @@ const PlayerDetails = () => {
           </div>
 
           <div>
-            <div className="text-8xl font-bold text-orange-500 text-center">
+            <div className="text-6xl md:text-8xl font-bold text-orange-500 text-center">
               <h1>OTHER PLAYERS</h1>
             </div>
             <div>

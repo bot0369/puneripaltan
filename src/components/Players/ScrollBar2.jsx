@@ -99,7 +99,7 @@ const ScrollBar2 = () => {
   };
 
   return (
-    <div className="w-300 my-20 mx-auto bg-black"
+    <div className="md:w-300 my-20 mx-3 md:mx-auto bg-black"
 
     >
       {status === "loading" && (
@@ -115,19 +115,19 @@ const ScrollBar2 = () => {
           {players.map((player) => (
             <div key={player.id} className="">
               <Link to={`/getPlayerDetails/${player.id}`}>
-                <div className=" relative p-1 text-center flex flex-cols gap-10 ">
-                  <div className="my-auto pl-20 py-35">
+                <div className=" relative p-1 text-center md:flex md:flex-cols gap-10 ">
+                  <div className="mt-20 md:my-auto md:mt-0 md:pl-20 md:py-35">
                     <h2 className="mt-2 text-3xl text-white font-semibold">
                       {player.name}
                     </h2>
                     <p className="text-md text-orange-600">{player.cat_name}</p>
                   </div>
 
-                  <div className="w-70 h-70 mt-25 overflow-hidden">
+                  <div className=" w-70 h-70 md:mt-25 overflow-hidden">
                     <img
                       src={player.full_image}
                       alt={player.name}
-                      className="w-full 2xl:h-80 2xl:w-80"
+                      className="absolute w-full 2xl:h-80 2xl:w-80"
                     />
                   </div>
 
