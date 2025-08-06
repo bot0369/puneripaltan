@@ -6,7 +6,7 @@ const Footer = () => {
     <div>
       <footer className="bg-gray-900 py-6 md:flex md:gap-15">
         <div>
-          <p className="text-white text-center md:px-18 text-lg my-3">
+          <p className="text-white text-center md:px-18 lg:px-34 text-lg my-3">
             Copyright © 2025 Puneri Paltan
           </p>
         </div>

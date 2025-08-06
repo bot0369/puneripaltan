@@ -101,7 +101,7 @@ const Scrollbar = () => {
   };
 
   return (
-    <div className="sm:w-220 md:w-100 lg:w-210 2xl:w-350 px-4 pt-30 pb-30">
+    <div className="sm:w-220 md:w-100 lg:w-250 2xl:w-350 px-4 pt-30 pb-30">
       {status === "loading" && (
         <p className="text-center text-gray-700">Loading gallery...</p>
       )}

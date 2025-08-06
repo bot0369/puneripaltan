@@ -11,8 +11,9 @@ import shiv from "../../assets/images/logos/shiv-naresh-logo.png";
 
 const Partners = () => {
   return (
-    <div className="relative ">
-      <div
+    <div className="relative overflow-hidden">
+      <div className="flex justify-center items-center">
+        <div
         className="absolute -top-30 md:-top-37 md:flex md:flex-column md:m-20 bg-orange-500 p-3 md:p-10 gap-15 md:px-20 clip-mobile md:clip-desktop"
       >
         <h2 className="text-xl md:py-2 text-center md:text-left text-white font-bold mb-3 md:mb-0">
@@ -30,6 +31,7 @@ const Partners = () => {
         >
           Go
         </button>
+      </div>
       </div>
 
       <div className="p-17 mt-10 md:p-30 md:mt-0">

@@ -8,13 +8,11 @@ import { Link, NavLink } from "react-router-dom";
 const navigation = [
   { name: "Players", href: "/players" },
   { name: "Paltan World", href: "/paltanworld" },
-  { name: "Tickets", href: "/tickets" },
+  { name: "Tickets", href: "https://in.bookmyshow.com/sports/pro-kabaddi-league-season-11-2024/ET00414457" },
 ];
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [prevScrollPos, setPrevScrollPos] = useState(0);
-  const [showNavbar, setShowNavbar] = useState(true);
   const handleMenuClick = () => {
     setMobileMenuOpen(false);
   }
@@ -62,18 +60,11 @@ export default function Header() {
         <div className="fixed inset-0 z-50" />
         <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <a href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">Your Company</span>
-              <img
-                alt=""
-                src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
-                className="h-8 w-auto"
-              />
-            </a>
+            
             <button
               type="button"
               onClick={() => setMobileMenuOpen(false)}
-              className="-m-2.5 rounded-md p-2.5 text-gray-700"
+              className="rounded-md p-2.5 text-gray-700"
             >
               <span className="sr-only">Close menu</span>
               <XMarkIcon aria-hidden="true" className="size-6" />

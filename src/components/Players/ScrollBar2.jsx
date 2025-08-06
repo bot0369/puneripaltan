@@ -123,11 +123,11 @@ const ScrollBar2 = () => {
                     <p className="text-md text-orange-600">{player.cat_name}</p>
                   </div>
 
-                  <div className=" w-70 h-70 md:mt-25 overflow-hidden">
+                  <div className="w-70 h-90 md:70 md:mt-25 overflow-hidden">
                     <img
                       src={player.full_image}
                       alt={player.name}
-                      className="absolute w-full 2xl:h-80 2xl:w-80"
+                      className="absolute w-70 2xl:h-80 2xl:w-80"
                     />
                   </div>
 
