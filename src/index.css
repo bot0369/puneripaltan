@@ -10,6 +10,9 @@
   box-sizing: border-box;
 }
 
+<link href="https://db.onlinewebfonts.com/c/2eb741600e1be7e02282904bb1271738?family=Love+Nature" rel="stylesheet">
+
+
 
 /* styles.css or tailwind.css */
 @tailwind base;
@@ -43,3 +46,134 @@
     }
   }
 }
+
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up.show {
+  animation: fadeInUp 2s ease-out forwards;
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-down.show {
+  animation: fadeInDown 2s ease-out forwards;
+}
+
+
+
+@keyframes fadeInUp2 {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeInUp2 0.6s ease forwards;
+}
+
+
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-150px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(50px);
+  }
+  100%{
+    transform: translateX(0px);
+  }
+}
+
+.fade-in-right {
+  animation: fadeInRight 0.6s ease-in-out forwards;
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(150px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(-50px);
+  }
+  100%{
+    transform: translateX(0px);
+  }
+}
+
+.fade-in-left {
+  animation: fadeInLeft 0.6s ease-in-out forwards;
+}
+
+
+@keyframes scaleInOut{
+  0%{
+    transform: scale(0.8);
+  }
+  50%{
+    transform: scale(1.2);
+  }
+  100%{
+    transform:scale(1) ;
+  }
+}
+
+.scale-in-out{
+  animation: scaleInOut 1s ease-in-out forwards;
+}
+
+@keyframes scaleInOut2 {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.scale-inout {
+  opacity: 0;
+  transform: scale(0.8);
+  will-change: transform, opacity;
+}
+
+.scale-inout.show {
+  animation: scaleInOut2 1s ease-in-out forwards;
+}
+
+
+

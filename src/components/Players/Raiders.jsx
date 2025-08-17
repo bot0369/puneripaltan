@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { getPlayers } from "../store/action/player-action";
 import { Link } from "react-router-dom";
 import Tilt from "react-parallax-tilt";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Raiders = () => {
   const dispatch = useDispatch();
@@ -15,6 +17,13 @@ const Raiders = () => {
 
   useEffect(() => {
     dispatch(getPlayers());
+
+    AOS.init({
+      duration: 800, 
+      once: false,   
+      offset: 50,    
+      easing: "ease-out",
+    });
   }, [dispatch]);
 
   const raiders = players.filter((p) => p.cat_name === "Raiders");
@@ -22,16 +31,20 @@ const Raiders = () => {
   const allRounders = players.filter((p) => p.cat_name === "All Rounders");
 
   const renderPlayers = (list) =>
-    list.map((player) => (
+    list.map((player, index) => (
       <Link to={`/getPlayerDetails/${player.id}`} key={player.id}>
         <Tilt
           key={player.id}
           perspective={300}
-          glareEnable= {false}
+          glareEnable={false}
           scale={1.04}
-          transitionSpeed={250}
+          transitionSpeed={1000}
         >
-          <div className="mb-10">
+          <div
+            className="mb-10"
+            data-aos="fade-up"
+            data-aos-delay={index * 500} 
+          >
             <img
               src={player.profile_image}
               alt={player.name}
@@ -40,21 +53,17 @@ const Raiders = () => {
             <h2 className="mx-auto text-4xl font-bold text-center">
               {player.name}
             </h2>
-            <p className="mt-1 text-xl text-orange-500 text-center">{player.position}</p>
+            <p className="mt-1 text-xl text-orange-500 text-center">
+              {player.position}
+            </p>
           </div>
         </Tilt>
       </Link>
     ));
 
-  {
-    status === "loading" && <p>Loading...</p>;
-  }
-  {
-    status === "failed" && <p className="text-red-600">{error}</p>;
-  }
-
   return (
     <div>
+      {/* RAIDERS */}
       <section className="mb-10 ">
         <div
           className="md:w-1/3 bg-red-400 my-20"
@@ -64,9 +73,12 @@ const Raiders = () => {
             RAIDERS
           </h1>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 md:px-40">{renderPlayers(raiders)}</div>
+        <div className="grid grid-cols-1 md:grid-cols-3 md:px-40">
+          {renderPlayers(raiders)}
+        </div>
       </section>
 
+      {/* DEFENDERS */}
       <section className="mb-10">
         <div
           className="md:w-1/3 bg-red-400 my-20"
@@ -76,11 +88,12 @@ const Raiders = () => {
             DEFENDERS
           </h1>
         </div>
-        <Link>
-          <div className="grid grid-cols-1 md:grid-cols-3 md:px-40 ">{renderPlayers(defenders)}</div>
-        </Link>
+        <div className="grid grid-cols-1 md:grid-cols-3 md:px-40">
+          {renderPlayers(defenders)}
+        </div>
       </section>
 
+      {/* ALL ROUNDERS */}
       <section className="mb-10">
         <div
           className="md:w-1/3 bg-red-400 my-20 "
@@ -90,7 +103,9 @@ const Raiders = () => {
             ALL ROUNDERS
           </h1>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 md:px-40">{renderPlayers(allRounders)}</div>
+        <div className="grid grid-cols-1 md:grid-cols-3 md:px-40">
+          {renderPlayers(allRounders)}
+        </div>
       </section>
     </div>
   );

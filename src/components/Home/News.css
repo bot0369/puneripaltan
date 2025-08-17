@@ -1,0 +1,11 @@
+[data-aos="fade-down"] {
+  transform: translateY(-3px); /* was -100px */
+  opacity: 0;
+  transition-property: transform, opacity;
+}
+
+[data-aos="fade-up"] {
+  transform: translateY(3px); /* was 100px */
+  opacity: 0;
+  transition-property: transform, opacity;
+}

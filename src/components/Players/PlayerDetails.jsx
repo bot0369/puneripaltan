@@ -8,6 +8,28 @@ import ScrollBar2 from "./ScrollBar2";
 import playerImages from "./playerImages";
 
 const PlayerDetails = () => {
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.remove("show"); 
+            void entry.target.offsetWidth; 
+            entry.target.classList.add("show"); 
+          } else {
+            entry.target.classList.remove("show"); 
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    const elements = document.querySelectorAll(".scale-inout");
+    elements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   const dispatch = useDispatch();
   const { id } = useParams();
 
@@ -30,14 +52,9 @@ const PlayerDetails = () => {
       {status === "failed" && <p className="text-red-600">{error}</p>}
       {status === "succeeded" && playerDetails && (
         <div>
-          
-          <div className="">
+          <div>
             {localImage && (
-              <img
-                src={localImage}
-                alt={playerDetails.name}
-                className=""
-              />
+              <img src={localImage} alt={playerDetails.name} />
             )}
           </div>
 
@@ -50,10 +67,13 @@ const PlayerDetails = () => {
               backgroundRepeat: "no-repeat",
             }}
           >
-            
-              <img src={playerDetails.full_image} alt="" className="mx-auto pt-10 md:pt-0 w-60"/>
-            
-            <div className="">
+            <img
+              src={playerDetails.full_image}
+              alt=""
+              className="mx-auto pt-10 md:pt-0 w-60 fade-in-right"
+            />
+
+            <div className="fade-in-left">
               <div className="md:flex md:flex-cols gap-30 md:ml-8 px-15 md:px-0">
                 <div>
                   <h1
@@ -114,7 +134,7 @@ const PlayerDetails = () => {
           </div>
 
           <div>
-            <h1 className="text-5xl md:text-8xl text-center py-1 md:py-5 text-[#fa4300] font-bold">
+            <h1 className="text-5xl md:text-8xl text-center py-1 md:py-5 text-[#fa4300] font-bold scale-inout">
               STATISTICS
             </h1>
           </div>
@@ -129,36 +149,28 @@ const PlayerDetails = () => {
               <h1>OVERALL</h1>
             </div>
             <div>
-              <div className="text-center py-3 w-35 mx-auto text-3xl mt-10 mb-3 font-bold bg-white">
+              <div className="text-center py-3 w-35 mx-auto text-3xl mt-10 mb-3 font-bold bg-white scale-inout">
                 {playerDetails.Matches_played}
               </div>
-              <div className="">
-                <h1>MATCHES PLAYED</h1>
-              </div>
+              <h1>MATCHES PLAYED</h1>
             </div>
             <div>
-              <div className="text-center py-3 w-35 mx-auto text-3xl mt-10 mb-3 font-bold bg-white">
+              <div className="text-center py-3 w-35 mx-auto text-3xl mt-10 mb-3 font-bold bg-white scale-inout">
                 {playerDetails.total_ponints_earned}
               </div>
-              <div>
-                <h1>TOTAL POINTS EARNED</h1>
-              </div>
+              <h1>TOTAL POINTS EARNED</h1>
             </div>
             <div>
-              <div className="text-center py-3 w-35 mx-auto text-3xl mt-10 mb-3 font-bold bg-white">
+              <div className="text-center py-3 w-35 mx-auto text-3xl mt-10 mb-3 font-bold bg-white scale-inout">
                 {playerDetails.most_points_in_a_match}
               </div>
-              <div>
-                <h1>MOST POINTS IN A MATCH</h1>
-              </div>
+              <h1>MOST POINTS IN A MATCH</h1>
             </div>
             <div>
-              <div className="text-center py-3 w-35 mx-auto text-3xl mt-10 mb-3 font-bold bg-white">
+              <div className="text-center py-3 w-35 mx-auto text-3xl mt-10 mb-3 font-bold bg-white scale-inout">
                 {playerDetails.not_out_percentage}
               </div>
-              <div>
-                <h1>NOT OUT PERCENTAGE</h1>
-              </div>
+              <h1>NOT OUT PERCENTAGE</h1>
             </div>
           </div>
 
@@ -173,28 +185,22 @@ const PlayerDetails = () => {
             </div>
             <div className="md:grid md:grid-cols-2 gap-x-20 gap-y-10 ">
               <div className="text-center m-10 md:m-0">
-                <div className="text-center py-3 w-35 mx-auto text-3xl mb-3 font-bold bg-stone-100">
+                <div className="text-center py-3 w-35 mx-auto text-3xl mb-3 font-bold bg-stone-100 scale-inout">
                   {playerDetails.no_of_super_raids}
                 </div>
-                <div>
-                  <h1>NO OF SUPER RAIDS</h1>
-                </div>
+                <h1>NO OF SUPER RAIDS</h1>
               </div>
               <div className="text-center m-10 md:m-0">
-                <div className="text-center py-3 w-35 mx-auto text-3xl mb-3 font-bold bg-stone-100">
+                <div className="text-center py-3 w-35 mx-auto text-3xl mb-3 font-bold bg-stone-100 scale-inout">
                   {playerDetails.super_10s}
                 </div>
-                <div>
-                  <h1>SUPER 10S</h1>
-                </div>
+                <h1>SUPER 10S</h1>
               </div>
               <div className="text-center m-10 md:m-0">
-                <div className="text-center py-3 w-35 mx-auto text-3xl mb-3 font-bold bg-stone-100">
+                <div className="text-center py-3 w-35 mx-auto text-3xl mb-3 font-bold bg-stone-100 scale-inout">
                   {playerDetails.avg_raid_points}
                 </div>
-                <div>
-                  <h1>AVG. RAID POINTS</h1>
-                </div>
+                <h1>AVG. RAID POINTS</h1>
               </div>
             </div>
             <div className="mx-auto w-50 h-50 rounded-[50%] border-20 border-orange-500 text-center flex flex-col justify-center items-center">
@@ -225,20 +231,16 @@ const PlayerDetails = () => {
             </div>
             <div className="md:grid md:grid-cols-2 gap-15">
               <div className="text-center m-10 md:m-0">
-                <div className="py-3 w-35 mx-auto text-3xl  mb-3 font-bold bg-white">
+                <div className="py-3 w-35 mx-auto text-3xl mb-3 font-bold bg-white">
                   {playerDetails.no_of_super_tackles}
                 </div>
-                <div>
-                  <h1>NO. OF SUPER TACKLES</h1>
-                </div>
+                <h1>NO. OF SUPER TACKLES</h1>
               </div>
               <div className="text-center m-10 md:m-0">
-                <div className="py-3 w-35 mx-auto text-3xl  mb-3 font-bold bg-white">
+                <div className="py-3 w-35 mx-auto text-3xl mb-3 font-bold bg-white">
                   {playerDetails.total_tacle_points}
                 </div>
-                <div>
-                  <h1>TOTAL TACKLE POINTS</h1>
-                </div>
+                <h1>TOTAL TACKLE POINTS</h1>
               </div>
             </div>
             <div className="md:flex md:flex-cols gap-10">
@@ -264,14 +266,10 @@ const PlayerDetails = () => {
             <div className="text-6xl md:text-8xl font-bold text-orange-500 text-center">
               <h1>OTHER PLAYERS</h1>
             </div>
-            <div>
-              <ScrollBar2 currentPlayerId={parseInt(id)} />
-            </div>
+            <ScrollBar2 currentPlayerId={parseInt(id)} />
           </div>
 
-          <div>
-            <Footer />
-          </div>
+          <Footer />
         </div>
       )}
     </div>

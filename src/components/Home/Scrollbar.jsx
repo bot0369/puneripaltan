@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getPlayers } from "../store/action/player-action";
 import Slider from "react-slick";
@@ -7,11 +7,13 @@ import "slick-carousel/slick/slick-theme.css";
 import { MdArrowLeft } from "react-icons/md";
 import { MdArrowRight } from "react-icons/md";
 import { Link } from "react-router-dom";
+import '../Home/Scrollbar.modules.css'
 
 const Scrollbar = () => {
   const dispatch = useDispatch();
 
   const { players, status, error } = useSelector((state) => state.player || {});
+  const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
     dispatch(getPlayers());
@@ -32,7 +34,7 @@ const Scrollbar = () => {
           height: "40px",
           position: "absolute",
           right: "1%",
-          top: "400px",
+          top: "600px",
           zIndex: 2,
           borderRadius: "40px",
           cursor: "pointer",
@@ -59,7 +61,7 @@ const Scrollbar = () => {
           height: "40px",
           position: "absolute",
           left: "50%",
-          top: "400px",
+          top: "600px",
           zIndex: 2,
           borderRadius: "50px",
           cursor: "pointer",
@@ -74,7 +76,6 @@ const Scrollbar = () => {
 
 
   const settings = {
-    dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 3,
@@ -84,13 +85,8 @@ const Scrollbar = () => {
     pauseOnHover: true,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
+    beforeChange: (current, next) => setActiveIndex(next),
     responsive: [
-      {
-        breakpoint: 992,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
       {
         breakpoint: 768,
         settings: {
@@ -101,7 +97,7 @@ const Scrollbar = () => {
   };
 
   return (
-    <div className="sm:w-220 md:w-100 lg:w-250 2xl:w-350 px-4 pt-30 pb-30">
+    <div className="sm:w-60 md:w-180 lg:w-200 xl:w-240 px-4 py-2">
       {status === "loading" && (
         <p className="text-center text-gray-700">Loading gallery...</p>
       )}
@@ -112,22 +108,37 @@ const Scrollbar = () => {
       )}
       {status === "succeeded" && players && players.length > 0 && (
         <Slider {...settings}>
-          {players.map((player) => (
-            <div key={player.id} className="">
+          {players.map((player, idx) => (
+            <div key={player.id} className="relative">
               <Link to={`/getPlayerDetails/${player.id}`}>
-              <div className="p-1 text-center">
-                <img
-                  src={player.profile_image}
-                  alt={player.name}
-                  className="w-60 h-60 object-cover rounded-full mx-auto 2xl:h-80 2xl:w-80"
-                />
-                <h2 className="mt-2 text-lg text-white font-semibold">
-                  {player.name}
-                </h2>
-                <p className="text-sm text-orange-600">{player.cat_name}</p>
-              </div>
+                <div className="py-40 text-center tracking-[2px]">
+                  <img
+                    src={player.profile_image}
+                    alt={player.name}
+                    className={` w-60 h-60 object-cover rounded-full mx-auto 2xl:h-80 2xl:w-80 ${idx === activeIndex ? "scale-first-card" : "opacity-50"}`}
+                  />
+                  <h2 className={`absolute z-20 text-xl px-20 text-white font-semibold z-10 transition-all duration-1
+                    ${idx === activeIndex
+                      ? "top-4/5 left-1/2 -translate-x-1/2 text-[30px] opactiy-100"
+                      : "top-2/3 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-50"
+                    }`}
+
+                  >
+                    {player.name}
+                  </h2>
+                  <p
+                    className={`absolute text-lg top-133 text-orange-600 left-1/2 -translate-x-1/2 transition-all duration-800 ease-in-out
+                      ${idx === activeIndex
+                        ? "translate-y-0 opacity-100"
+                        : "translate-y-5 opacity-0"
+                      }`}
+                  >
+                    {player.cat_name}
+                  </p>
+
+                </div>
               </Link>
-              
+
             </div>
           ))}
         </Slider>

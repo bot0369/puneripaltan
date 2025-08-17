@@ -4,13 +4,13 @@ import { getPlayers } from "../store/action/player-action";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { MdArrowLeft } from "react-icons/md";
-import { MdArrowRight } from "react-icons/md";
+import { MdArrowLeft, MdArrowRight } from "react-icons/md";
 import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const ScrollBar2 = () => {
   const dispatch = useDispatch();
-
+  const {id:currentId} = useParams();
   const { players, status, error } = useSelector((state) => state.player || {});
 
   useEffect(() => {
@@ -98,6 +98,11 @@ const ScrollBar2 = () => {
     ],
   };
 
+  const filteredPlayers = players?.filter(
+    (player) => String(player.id) !== String(currentId)
+  )
+
+
   return (
     <div className="md:w-300 my-20 mx-3 md:mx-auto bg-black"
 
@@ -110,9 +115,9 @@ const ScrollBar2 = () => {
           {error || "Failed to load players."}
         </p>
       )}
-      {status === "succeeded" && players && players.length > 0 && (
+      {status === "succeeded" && filteredPlayers.length > 0 && (
         <Slider {...settings}>
-          {players.map((player) => (
+          {filteredPlayers.map((player) => (
             <div key={player.id} className="">
               <Link to={`/getPlayerDetails/${player.id}`}>
                 <div className=" relative p-1 text-center md:flex md:flex-cols gap-10 ">
