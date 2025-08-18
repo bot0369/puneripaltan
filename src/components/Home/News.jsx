@@ -41,7 +41,7 @@ const News = () => {
         }}
       >
         <h1 ref={refs[0]}
-          className='text-orange-500 text-7xl font-bold md:text-8xl opacity-0 fade-in-down'
+          className='text-orange-500 mx-10 text-7xl font-bold md:text-8xl opacity-0 fade-in-down'
         >
           PUNERI PALTAN
         </h1>
@@ -54,8 +54,8 @@ const News = () => {
 
         <Link 
           to='/' 
-          className='absolute bottom-35 bg-orange-500 italic text-xl text-white py-1 px-15 md:py-3 md:px-30' 
-          style={{ clipPath: "polygon( 2% 0, 100% 0, 98% 100%, 0% 100%)" }}
+          className='absolute bottom-35 md:bottom-33 bg-orange-500 italic text-2xl text-white py-1 px-20 md:py-3 md:px-30' 
+          style={{ clipPath: "polygon( 5% 0, 100% 0, 95% 100%, 0% 100%)" }}
         >
             Enter 
         </Link>

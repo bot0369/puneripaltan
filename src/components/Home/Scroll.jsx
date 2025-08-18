@@ -28,17 +28,16 @@ const Scroll = () => {
   }, []);
 
   return (
-    <div className="bg-black text-white py-20 w-100%">
+    <div className="bg-black text-white py-20 md:py-30 w-100%">
       <div
-        className="mx-auto w-fit text-2xl tracking-[30px] md:tracking-[60px] pl-6 md:pl-0"
-        style={{ fontFamily: "Exo-Light" }}
+        className="exo-light mx-auto w-fit text-2xl md:text-[20px] tracking-[30px] md:tracking-[65px] pl-6 md:pl-0"
       >
         SCROLL
       </div>
 
       <p
-        className="m-10 md:m-20 md:px-20 text-3xl md:text-4xl text-center md:text-justify"
-        style={{ color: "#ff7500", fontFamily: "Exo-Bold" }}
+        className="exo my-3 mx-10 md:mx-0 md:m-20 md:px-40 text-2xl md:text-[50px] text-center md:text-justify"
+        style={{ color: "#ff7500"}}
       >
         Puneri Paltan is currently one of the top performing teams in the Pro
         Kabaddi League. With a mix of unstoppable energy, honed-out skills and
@@ -46,11 +45,11 @@ const Scroll = () => {
         better, challenge its opponents and make a difference.
       </p>
 
-      <div className="block md:flex md:flex-column">
-        <div className="py-10 md:py-60 px-7 text-5xl md:text-[90px] text-orange-400">
+      <div className="block lg:grid lg:grid-cols-[1fr_2fr] ">
+        <div className="py-10 md:py-60 px-7 text-5xl md:text-[90px] font-bold text-orange-400 lg:tracking-[5px]">
           <div ref={ref} className="fade-in-down">PLAYERS</div>
         </div>
-        <div>
+        <div className="">
           <Scrollbar />
         </div>
       </div>

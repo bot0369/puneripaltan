@@ -9,31 +9,31 @@ const Tickets = () => {
             href="https://in.bookmyshow.com/sports/pro-kabaddi-league-season-11-2024/ET00414457"
             target="_blank"
         >
-            <div className="px-15 relative">
-                <div className='relative h-50 w-70 md:h-100 md:w-150 lg:w-150 -bottom-10 -left-10 md:bottom-50 md:left-0 flex flex-row bg-stone-500'
+            <div className="px-15 md:h-70 relative">
+                <div className='relative h-50 w-70 lg:py-50 md:w-150 lg:w-200 -bottom-10 -left-10 md:bottom-50 md:left-0 flex flex-row bg-stone-500'
                     style={{
                         clipPath: 'polygon(10% 0, 100% 0, 90% 100%, 0% 100%)',
                     }}
                 >
                     <div>
-                        <img src={image} alt="" className='absolute bottom-0 w-130' />
+                        <img src={image} alt="" className='absolute bottom-0 w-130 lg:left-10' />
                     </div>
                 </div>
-                <div className='absolute left-150 h-100 w-150 lg:left-145 lg:w-150 bottom-50 bg-black hidden md:block'
+                <div className='absolute left-150 h-70 w-150 lg:py-50 lg:left-165 lg:w-200 bottom-20 bg-black hidden md:block'
                     style={{
                         clipPath: 'polygon(10% 0, 100% 0, 90% 100%, 0% 100%)',
                     }}
                 >
                 </div>
                 <div>
-                    <div className='absolute border-2 text-white px-13 py-2 bg-orange-500 -left-20 top-70 md:-top-5 md:left-110 lg:left-120  text-2xl italic cursor-pointer'
+                    <div className='absolute border-2 text-white px-13 py-2 bg-orange-500 -left-10 top-70 md:-top-5 md:left-110 lg:left-130  text-2xl italic cursor-pointer'
                         style={{ clipPath: 'polygon(5% 0, 100% 0, 95% 100%, 0% 100%)' }}
                     >
                         Buy Tickets 
                     </div>
                 </div>
                 <div>
-                    <img src={ticket} alt="" className='absolute right-10 -bottom-55 w-60 md:w-80 md:right-45 md:bottom-75 sm:w-80 -z-1 lg:z-20 lg:right-50' />
+                    <img src={ticket} alt="" className='absolute right-10 -bottom-55 w-60 md:w-80 md:right-45 md:bottom-45 sm:w-80 -z-1 lg:z-20 lg:right-80' />
                 </div>
             </div>
         </a>
@@ -44,4 +44,4 @@ const Tickets = () => {
 export default Tickets
 
 
-// s
+

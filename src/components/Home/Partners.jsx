@@ -83,59 +83,78 @@ const Partners = () => {
 
       <div className="p-17 mt-10 md:p-30 md:mt-0">
         <div>
-          <h1 ref={partnersRef} className="text-4xl  md:text-8xl font-bold text-orange-500 md:text-center">
+          <h1 ref={partnersRef} className="flex justify-center items-center text-4xl  md:text-8xl font-bold text-orange-500 md:text-center">
             PARTNERS
           </h1>
         </div>
         <div className="text-center p-10 flex flex-col justify-center items-center gap-10">
           <div>
             <div>
-              <img src={principalPartner} alt="" />
-              <p>Principal Partner</p>
+              <a href="https://www.forcemotors.com/" target="_blank" >
+                <img src={principalPartner} alt="" />
+                <p>Principal Partner</p>
+              </a>
             </div>
           </div>
           <div className="flex flex-row gap-10">
             <div>
-              <img src={poweredBy} alt="" />
+              <a href="https://batery.ai/" target="_blank">
+                <img src={poweredBy} alt="" />
+                <p>Powered Partner</p>
+              </a>
+            </div>
+            <div>
+              <a href="https://www.kirloskarpumps.com/" target="_blank">
+                <img src={assoPartner} alt="" />
 
-              <p>Powered Partner</p>
-            </div>
-            <div>
-              <img src={assoPartner} alt="" />
-
-              <p>Associate Partner</p>
+                <p>Associate Partner</p>
+              </a>
             </div>
           </div>
           <div className="flex flex-row gap-10">
             <div>
-              <img src={stihl} alt="" />
-              <p>Co-Partner</p>
+              <a href="https://www.stihl.com/en" target="_blank">
+                <img src={stihl} alt="" />
+                <p>Co-Partner</p>
+              </a>
             </div>
             <div>
-              <img src={hint} alt="" />
-              <p>Co-Partner</p>
+              <a href="https://www.hintworld.com/" target="_blank">
+                <img src={hint} alt="" />
+                <p>Co-Partner</p>
+              </a>
             </div>
             <div>
-              <img src={vikram} alt="" />
-              <p>Co-Partner</p>
+              <a href="https://www.vikramtea.com/" target="_blank">
+                <img src={vikram} alt="" />
+                <p>Co-Partner</p>
+              </a>
             </div>
             <div>
-              <img src={stihl} alt="" />
-              <p>Co-Partner</p>
+              <a href="https://www.focus11.net/" target="_blank">
+                <img src={stihl} alt="" />
+                <p>Co-Partner</p>
+              </a>
             </div>
           </div>
           <div className="flex flex-row gap-10">
             <div>
-              <img src={radio} alt="" />
-              <p>Radio Partner</p>
+              <a href="https://www.radiocity.in/" target="_blank">
+                <img src={radio} alt="" />
+                <p>Radio Partner</p>
+              </a>
             </div>
             <div>
-              <img src={icon} alt="" />
-              <p>Travel Partner</p>
+              <a href="" target="_blank">
+                <img src={icon} alt="" />
+                <p>Travel Partner</p>
+              </a>
             </div>
             <div>
-              <img src={shiv} alt="" />
-              <p>Kit Partner</p>
+              <a href="https://shivnaresh.in/" target="_blank">
+                <img src={shiv} alt="" />
+                <p>Kit Partner</p>
+              </a>
             </div>
           </div>
         </div>

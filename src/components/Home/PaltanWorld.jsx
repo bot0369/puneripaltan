@@ -45,10 +45,10 @@ const PaltanWorld = () => {
           <h1 className="absolute text-white top-55 text-7xl md:top-68 md:left-185 md:text-8xl font-bold px-5">
             <div ref={refs[1]} className="fade-in-up">WORLD</div>
           </h1>
-          <div className="absolute top-77 left-10 z-20 md:top-85 md:left-185 md:px-30 md:py-10">
+          <div className="absolute top-77 left-10 flex justify-center items-center z-20 md:top-85 md:left-185 md:px-30 md:py-10">
             <Link
               to="/paltanworld"
-              className="bg-orange-500 px-25 py-3 text-xl text-white italic"
+              className="bg-orange-500 px-25 py-3  text-xl text-white italic"
               style={{
                 clipPath: "polygon(3% 0, 100% 0, 97% 100%, 0% 100%)",
               }}

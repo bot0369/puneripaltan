@@ -1,4 +1,6 @@
+
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap');
 
 .slick-prev::before,
 .slick-next::before {
@@ -9,10 +11,6 @@
 *{
   box-sizing: border-box;
 }
-
-<link href="https://db.onlinewebfonts.com/c/2eb741600e1be7e02282904bb1271738?family=Love+Nature" rel="stylesheet">
-
-
 
 /* styles.css or tailwind.css */
 @tailwind base;
@@ -175,5 +173,16 @@
   animation: scaleInOut2 1s ease-in-out forwards;
 }
 
+.exo {
+  font-family: "Exo", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
 
-
+.exo-light {
+  font-family: "Exo", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+}

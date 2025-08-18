@@ -40,12 +40,12 @@ export default function Header() {
             <Bars3Icon aria-hidden="true" className="size-6" />
           </button>
         </div>
-        <div className="hidden lg:flex lg:gap-x-6 2xl:gap-x-15 pr-100 tracking-wider">
+        <div className="hidden lg:flex lg:gap-x-10 2xl:gap-x-15 pr-100 tracking-wider">
           {navigation.map((item) => (
             <NavLink
               key={item.name}
               to={item.href}
-              className="text-sm/6 font-semibold text-white"
+              className="text-[18px] font-semibold text-white hover:text-orange-500"
             >
               {item.name}
             </NavLink>
