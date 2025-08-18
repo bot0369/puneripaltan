@@ -14,13 +14,13 @@ const Scroll = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            element.classList.remove("show"); // reset animation
-            void element.offsetWidth; // force reflow to restart animation
+            element.classList.remove("show"); 
+            void element.offsetWidth;
             element.classList.add("show");
           }
         });
       },
-      { threshold: 0.5 } // triggers when 50% visible
+      { threshold: 0.5 } 
     );
 
     if (element) observer.observe(element);

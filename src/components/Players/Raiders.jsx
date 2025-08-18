@@ -63,7 +63,6 @@ const Raiders = () => {
 
   return (
     <div>
-      {/* RAIDERS */}
       <section className="mb-10 ">
         <div
           className="md:w-1/3 bg-red-400 my-20"
@@ -78,7 +77,6 @@ const Raiders = () => {
         </div>
       </section>
 
-      {/* DEFENDERS */}
       <section className="mb-10">
         <div
           className="md:w-1/3 bg-red-400 my-20"
@@ -93,7 +91,6 @@ const Raiders = () => {
         </div>
       </section>
 
-      {/* ALL ROUNDERS */}
       <section className="mb-10">
         <div
           className="md:w-1/3 bg-red-400 my-20 "
